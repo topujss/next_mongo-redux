@@ -1,0 +1,18 @@
+button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+  cursor: pointer;
+  &:hover {
+    background-color: blue;
+  }
+}
+
+h1{
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
