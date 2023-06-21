@@ -8,6 +8,12 @@ const userSchema = mongoose.Schema(
       required: true,
       trim: true,
     },
+    userName: {
+      type: String,
+      required: true,
+      trim: true,
+      default: 'ahmed12',
+    },
     email: {
       type: String,
       required: true,
@@ -21,10 +27,6 @@ const userSchema = mongoose.Schema(
       type: String,
       default: null,
     },
-    age: {
-      type: Number,
-      required: true,
-    },
     gender: {
       type: String,
       required: true,
@@ -34,7 +36,7 @@ const userSchema = mongoose.Schema(
       type: Boolean,
       default: true,
     },
-    status: {
+    trash: {
       type: Boolean,
       default: false,
     },
@@ -45,4 +47,4 @@ const userSchema = mongoose.Schema(
 );
 
 // export user schema
-export default mongoose.model('user', userSchema);
+export default mongoose.models.User || mongoose.model('User', userSchema);

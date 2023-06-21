@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { fetchAllUser } from './userApi';
 
 // create slice for user
 const userSlice = createSlice({
@@ -8,6 +9,11 @@ const userSlice = createSlice({
     msg: '',
   },
   reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(fetchAllUser.fulfilled, (state, action) => {
+      state.users = action.payload;
+    });
+  },
 });
 
 // export selectors
